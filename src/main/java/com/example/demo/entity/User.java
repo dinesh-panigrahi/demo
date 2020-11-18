@@ -19,7 +19,7 @@ public class User {
 	private String userName;
 
 	@Column(name = "password")
-	private String paasword;
+	private String password;
 
 	@Column(name = "token")
 	private String token = null;
@@ -28,11 +28,11 @@ public class User {
 		super();
 	}
 
-	public User(long id, String userName, String paasword, String token) {
+	public User(long id, String userName, String password, String token) {
 		super();
 		this.id = id;
 		this.userName = userName;
-		this.paasword = paasword;
+		this.password = password;
 		this.token = token;
 	}
 
@@ -52,12 +52,12 @@ public class User {
 		this.userName = userName;
 	}
 
-	public String getPaasword() {
-		return paasword;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPaasword(String paasword) {
-		this.paasword = paasword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getToken() {

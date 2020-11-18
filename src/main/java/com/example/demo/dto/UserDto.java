@@ -6,7 +6,7 @@ public class UserDto {
 
 	private String userName;
 
-	private String paasword;
+	private String password;
 
 	private String token;
 
@@ -14,11 +14,11 @@ public class UserDto {
 		super();
 	}
 
-	public UserDto(long id, String userName, String paasword, String token) {
+	public UserDto(long id, String userName, String password, String token) {
 		super();
 		this.id = id;
 		this.userName = userName;
-		this.paasword = paasword;
+		this.password = password;
 		this.token = token;
 	}
 
@@ -38,12 +38,12 @@ public class UserDto {
 		this.userName = userName;
 	}
 
-	public String getPaasword() {
-		return paasword;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPaasword(String paasword) {
-		this.paasword = paasword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getToken() {

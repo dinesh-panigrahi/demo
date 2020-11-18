@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 		if (userRepo.findByUserName(dto.getUserName()).isPresent()) {
 			res = new AuthRes("error", "Account Already Exist!");
 		} else {
-			User user = new User(dto.getId(), dto.getUserName(), dto.getPaasword(), UUID.randomUUID().toString());
+			User user = new User(dto.getId(), dto.getUserName(), dto.getPassword(), UUID.randomUUID().toString());
 			User savedUser = userRepo.save(user);
 			res = new AuthRes("ok", "Account Created");
 		}
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
 
 		AuthRes res = null;
 		if (userRepo.findByUserName(dto.getUserName()).isPresent()) {
-			if (userRepo.findByUserNameAndPaaswordAndToken(dto.getUserName(), dto.getPaasword(), dto.getToken())
+			if (userRepo.findByUserNameAndPasswordAndToken(dto.getUserName(), dto.getPassword(), dto.getToken())
 					.isPresent()) {
 				res = new AuthRes("ok", "sign in successful");
 			} else {
